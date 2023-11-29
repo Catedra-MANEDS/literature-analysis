@@ -19,7 +19,7 @@ Provides tools to visualise the results of the analysis, making it easier to int
 ### Installation: ### 
 Start by installing litstudy in your development environment using the official documentation or the instructions provided in the GitHub repository.
 
-### onfiguration: ### 
+### Configuration: ### 
 Configure the tool according to your needs, including defining specific parameters for the analysis you are carrying out.
 
 ### Text Processing: ### 
