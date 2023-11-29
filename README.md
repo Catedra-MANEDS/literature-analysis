@@ -2,7 +2,7 @@
 
 ## Why? ##
 
-###Automation:### It automates repetitive tasks in analysis, such as identifying themes, analysing sentiment and extracting key information.
+###Automation### It automates repetitive tasks in analysis, such as identifying themes, analysing sentiment and extracting key information.
 
 ###Efficiency:### By processing large amounts of text data quickly, litstudy facilitates the analysis of large literary works or document sets.
 
