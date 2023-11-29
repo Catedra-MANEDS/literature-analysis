@@ -1,5 +1,8 @@
 # Literature-analysis
 
+## Official github ## 
+https://github.com/NLeSC/litstudy/tree/master
+
 ## Why? ##
 
 ### Automation: ### 
