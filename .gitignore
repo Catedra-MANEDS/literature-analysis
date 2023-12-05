@@ -1,3 +1,5 @@
-*.scopus.*
-html
+.scopus.bak
+.scopus.dat
+.scopus.dir
+citation.html
 lib
