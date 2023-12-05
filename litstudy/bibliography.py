@@ -41,38 +41,38 @@ print(len(docs_notfound), 'papers were not found and were discarded')
 docs = docs_scopus.filter_docs(lambda d: d is not None)
 print(len(docs), 'papers remaining after filtering')
 
-# # Plot
-# litstudy.plot_year_histogram(docs_scopus);
-# print("1")
-# plt.show()
+# Plot
+litstudy.plot_year_histogram(docs_scopus);
+print("1")
+plt.show()
 
-# litstudy.plot_affiliation_histogram(docs, limit=15);
-# print("2")
-# plt.show()
+litstudy.plot_affiliation_histogram(docs, limit=15);
+print("2")
+plt.show()
 
-# litstudy.plot_author_histogram(docs); # PONER BIEN LOS NOMBRES
-# print("3")
-# plt.show()
+litstudy.plot_author_histogram(docs); # PONER BIEN LOS NOMBRES
+print("3")
+plt.show()
 
-# litstudy.plot_language_histogram(docs);
-# print("4")
-# plt.show()
+litstudy.plot_language_histogram(docs);
+print("4")
+plt.show()
 
-# litstudy.plot_number_authors_histogram(docs);
-# print("5")
-# plt.show()
+litstudy.plot_number_authors_histogram(docs);
+print("5")
+plt.show()
 
-# litstudy.plot_source_histogram(docs, limit=15);
-# print("6")
-# plt.show()
+litstudy.plot_source_histogram(docs, limit=15);
+print("6")
+plt.show()
 
-# litstudy.plot_country_histogram(docs, limit=15);
-# print("7")
-# plt.show()
+litstudy.plot_country_histogram(docs, limit=15);
+print("7")
+plt.show()
 
-# litstudy.plot_continent_histogram(docs);
-# print("8")
-# plt.show()
+litstudy.plot_continent_histogram(docs);
+print("8")
+plt.show()
 
 # -----------------------------------------------------------
 
