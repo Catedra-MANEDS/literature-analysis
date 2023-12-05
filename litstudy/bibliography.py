@@ -2,9 +2,7 @@ import logging
 import litstudy
 import matplotlib.pyplot as plt
 import seaborn as sbs
-import warnings
-warnings.filterwarnings("ignore")
-
+import networkx as nx
 # -----------------------------------------------------------
 
 # Options for plots
@@ -40,69 +38,64 @@ print(len(docs_notfound), 'papers were not found and were discarded')
 # -----------------------------------------------------------
 
 # Flitering
-docs = docs_scopus.filter_docs(lambda d: d.publication_year >= 2000)
+docs = docs_scopus.filter_docs(lambda d: d is not None)
 print(len(docs), 'papers remaining after filtering')
 
-# Plot
-litstudy.plot_year_histogram(docs_scopus);
-print("1")
-plt.show()
+# # Plot
+# litstudy.plot_year_histogram(docs_scopus);
+# print("1")
+# plt.show()
 
-litstudy.plot_affiliation_histogram(docs, limit=15);
-print("2")
-plt.show()
+# litstudy.plot_affiliation_histogram(docs, limit=15);
+# print("2")
+# plt.show()
 
-litstudy.plot_author_histogram(docs); # PONER BIEN LOS NOMBRES
-print("3")
-plt.show()
+# litstudy.plot_author_histogram(docs); # PONER BIEN LOS NOMBRES
+# print("3")
+# plt.show()
 
-litstudy.plot_language_histogram(docs);
-print("4")
-plt.show()
+# litstudy.plot_language_histogram(docs);
+# print("4")
+# plt.show()
 
-litstudy.plot_number_authors_histogram(docs);
-print("5")
-plt.show()
+# litstudy.plot_number_authors_histogram(docs);
+# print("5")
+# plt.show()
 
-litstudy.plot_source_histogram(docs, limit=15);
-print("6")
-plt.show()
+# litstudy.plot_source_histogram(docs, limit=15);
+# print("6")
+# plt.show()
 
-litstudy.plot_country_histogram(docs, limit=15);
-print("7")
-plt.show()
+# litstudy.plot_country_histogram(docs, limit=15);
+# print("7")
+# plt.show()
 
-litstudy.plot_continent_histogram(docs);
-print("8")
-plt.show()
+# litstudy.plot_continent_histogram(docs);
+# print("8")
+# plt.show()
 
-litstudy.plot_cocitation_network(docs, max_edges=500)
+# -----------------------------------------------------------
+
+litstudy.network.plot_network(litstudy.network.build_cocitation_network(docs, max_edges=500))
 print("9")
 plt.show()
-
-# # -----------------------------------------------------------
 
 corpus = litstudy.build_corpus(docs)
 
 litstudy.compute_word_distribution(corpus).filter(like='_', axis=0).sort_index()
-print("10")
-plt.show()
-
 litstudy.plot_word_distribution(corpus, limit=50, title="Top words", vertical=True, label_rotation=45);
-print("11")
+print("10")
 plt.show()
 
 num_topics = 10
 topic_model = litstudy.train_nmf_model(corpus, num_topics, max_iter=250)
-print("12")
-plt.show()
 
 litstudy.plot_topic_clouds(topic_model, ncols=5);
-print("13")
+print("11")
 plt.show()
 
 litstudy.plot_embedding(corpus, topic_model);
-print("14")
+print("12")
 plt.show()
 
 # MUST: The topic_id must be a word in the topic cloud
@@ -120,7 +113,7 @@ groups = {
     'other': 'not traffic_topic',
 }
 litstudy.plot_year_histogram(docs, groups=groups, stacked=True);
-print("15")
+print("13")
 plt.show()
 
 table = litstudy.compute_year_histogram(docs, groups=groups)
@@ -128,7 +121,7 @@ table.div(table.sum(axis=1), axis=0) * 100
 print(table)
 
 litstudy.plot_source_histogram(docs, groups=groups, limit=25, stacked=True);
-print("16")
+print("14")
 plt.show()
 
 # -----------------------------------------------------------
