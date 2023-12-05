@@ -40,7 +40,7 @@ Analyse the results obtained and make interpretations based on the specific obje
 pip install litstudy
 
 ### Download CSV files: ### 
-Go to Scopus, SemanticScholar, CrossRef, DBLP, arXiv, IEEE Xplore or Springer Link to obtain thje papers related with your investigation and download the papers in CSV format.
+Go to Scopus, SemanticScholar, CrossRef, DBLP, arXiv, IEEE Xplore or Springer Link to obtain the papers related with your investigation and download the papers in CSV format.
 
 ### Scopus API: ### 
 Go to scopus.com and create your own API to process the literature from the CSV files. (YOU MUST BE CONNECTED VIA VPN TO EDUROAM).
