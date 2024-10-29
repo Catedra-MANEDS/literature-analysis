@@ -18,9 +18,11 @@ print(len(docs_ieee), 'papers loaded from IEEE')
 docs_springer = litstudy.load_springer_csv('litstudy/data/springer.csv')
 print(len(docs_springer), 'papers loaded from Springer')
 
+docs_bibtex = litstudy.load_bibtex('litstudy/data/zotero.bib')
+print(len(docs_springer), 'papers loaded from Bibtex file')
 
 # Merge the two document sets
-docs_csv = docs_ieee | docs_springer
+docs_csv = docs_ieee | docs_springer | docs_bibtex
 print(len(docs_csv), 'papers loaded from CSV')
 
 docs_exclude = litstudy.load_ris_file('litstudy/data/exclude.ris')
