@@ -1,0 +1,5 @@
+litstudy
+matplotlib
+seaborn
+networkx
+pandas
