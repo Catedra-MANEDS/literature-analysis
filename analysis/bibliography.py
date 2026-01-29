@@ -27,8 +27,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def parse_arguments() -> argparse.Namespace:
-    """Parses command-line arguments."""
+def parse_arguments(args: Optional[List[str]] = None) -> argparse.Namespace:
+    """Parses command-line arguments.
+
+    Args:
+        args: Optional list of arguments to parse. If None, parses sys.argv.
+    """
     parser = argparse.ArgumentParser(
         description="Perform automated literature analysis using litstudy.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
@@ -53,7 +57,7 @@ def parse_arguments() -> argparse.Namespace:
         default=DEFAULT_TOPIC,
         help="Keyword to identify relevant topic in topic modeling.",
     )
-    return parser.parse_args()
+    return parser.parse_args(args)
 
 
 def setup_plotting_style():

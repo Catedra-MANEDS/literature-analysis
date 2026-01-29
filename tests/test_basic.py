@@ -11,10 +11,13 @@ from analysis import bibliography
 class TestBibliographyAnalysis(unittest.TestCase):
     def test_argument_parser(self):
         """Test that arguments can be parsed (basic check)."""
-        parser = bibliography.parse_arguments()
-        # We can't easily parse args here without mocking sys.argv,
-        # but we can check the parser object exists.
-        self.assertIsNotNone(parser)
+        args = bibliography.parse_arguments([])
+        # Test that arguments are parsed with defaults
+        self.assertIsNotNone(args)
+        self.assertIsNone(args.data_dir)
+        self.assertFalse(args.save_plots)
+        self.assertEqual(args.output_dir, "results")
+        self.assertEqual(args.topic_keyword, "travel")
 
     def test_paths_exist(self):
         """Test that critical script paths are resolved correctly relative to the file."""
