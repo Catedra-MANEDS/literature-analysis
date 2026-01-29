@@ -32,6 +32,10 @@ def parse_arguments(args: Optional[List[str]] = None) -> argparse.Namespace:
 
     Args:
         args: Optional list of arguments to parse. If None, parses sys.argv.
+
+    Returns:
+        argparse.Namespace: Parsed command-line arguments with attributes for
+            data_dir, save_plots, output_dir, and topic_keyword.
     """
     parser = argparse.ArgumentParser(
         description="Perform automated literature analysis using litstudy.",
